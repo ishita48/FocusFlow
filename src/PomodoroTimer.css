@@ -1,0 +1,358 @@
+/* Add bounce keyframes */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Reset and base styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333; /* Darken text color for better readability */
+}
+
+/* Startup Title Styles */
+.startup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.focusflow-image {
+  max-width: 10%;
+  height: auto;
+  opacity: 0;
+  animation: fadeIn 2s forwards, bounce 2s 2s;
+}
+
+/* Startup Title Styles */
+.startup-text {
+  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.focus, .flow {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.focus {
+  animation-delay: 0s;
+  color: white;
+}
+
+.flow {
+  animation-delay: 1s;
+  color: #91c6ff;
+}
+
+/* Mode display styling */
+.mode-display {
+  font-size: 18px;
+  color: #67a3e0; /* Blue color */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Pomodoro Timer styles */
+.pomodoro-timer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.pomodoro-timer {
+  background: linear-gradient(135deg, #ffffff, #ddd8d8); /* Adjust background gradient */
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  color: #333;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 1s ease-out;
+}
+
+.time-display {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #65afff;
+  animation: pulse 1s infinite alternate;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #91c6ff, #3b99ff);
+  color: #fff;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #3b99ff, #1a75ff);
+  transform: translateY(-5px);
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align labels to the left */
+}
+
+.settings .setting {
+  margin-bottom: 20px; /* Increase spacing between settings */
+}
+
+.settings label {
+  font-size: 18px; /* Keep the font size */
+  font-family: "San Francisco", "Helvetica Neue", sans-serif; /* Use San Francisco font family */
+  font-weight: 500; /* Adjust font weight for a professional look */
+  color: #333; /* Darken the color for better readability */
+  margin-bottom: 5px; /* Add spacing between label and input */
+}
+
+.settings input[type="number"] {
+  width: 60px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Todo List styles */
+.todo-list {
+  background-color: #d1d1d1;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 300px;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 1s ease-out;
+  margin-left: 20px;
+  margin-top: 20px; /* Add margin-top for pushing it down */
+}
+
+.todo-list h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #0d0b2b;
+}
+
+.task-input {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.task-input input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.task-input button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #5e86a0, #051b29);
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.task-input button:hover {
+  background: linear-gradient(135deg, #3b5465, #020c12);
+}
+
+.todo-list ul {
+  padding: 0;
+  list-style-type: none;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  animation: slideInLeft 0.5s;
+}
+
+.todo-list li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-list li input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.todo-list li button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f69f9f, #d21411);
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.todo-list li button:hover {
+  background: linear-gradient(135deg, #c16060, #5d0c0c);
+}
+
+/* Progress bar styles */
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  background-color: #ddd;
+  border-radius: 5px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.progress {
+  background: linear-gradient(135deg, #c7e9ff, #0d8bd9);
+  height: 100%;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-percentage {
+  color: #0c3969; /* Blue color for the percentage */
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.chart-container {
+  margin-top: 20px;
+  text-align: center;
+  color: #2c65a5;
+}
+
+.chart {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.bar {
+  width: 100px;
+  background-color: #007bff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.bar.work {
+  background: linear-gradient(135deg, #d9f0ff, #1d5f88); /* Green for work */
+}
+
+.bar.break {
+  background: linear-gradient(135deg, #ecf8ff, #03141f); /* Yellow for breaks */
+}
+
+.label {
+  font-size: 16px;
+  color: #fff;
+}
+
+.duration {
+  font-size: 14px;
+  color: #fff;
+}
+
+
+/* Animations */
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

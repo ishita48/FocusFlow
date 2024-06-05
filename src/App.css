@@ -1,0 +1,13 @@
+/* src/App.css */
+.App {
+  text-align: center;
+  background: linear-gradient(135deg,#5e86a0, #051b29); /* Updated gradient colors */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
