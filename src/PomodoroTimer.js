@@ -129,7 +129,9 @@ const displayTimerMessage = (message) => {
   };
 
   const handleTimeChange = (event, setTime) => {
-    const newValue = event.target.value * 60;
+    const parsed = parseInt(event.target.value, 10);
+    if (isNaN(parsed) || parsed < 1 || parsed > 120) return; // enforce 1–120 minute bounds
+    const newValue = parsed * 60;
     setTime(newValue);
     if (
       (mode === 'work' && setTime === setWorkTime) ||
@@ -247,11 +249,11 @@ const displayTimerMessage = (message) => {
             <div className="chart-container">
               <h2>Work and Break Duration Chart</h2>
               <div className="chart">
-                <div className="bar work" style={{ height: `${workDuration}px` }}>
+                <div className="bar work" style={{ height: `${Math.min(workDuration, 500)}px` }}>
                   <span className="label">Work</span>
                   <span className="duration">{formatTime(workDuration)}</span>
                 </div>
-                <div className="bar break" style={{ height: `${breakDuration}px` }}>
+                <div className="bar break" style={{ height: `${Math.min(breakDuration, 500)}px` }}>
                   <span className="label">Break</span>
                   <span className="duration">{formatTime(breakDuration)}</span>
                 </div>
@@ -273,4 +275,3 @@ const LoadingPage = () => (
 );
 
 export default PomodoroTimer;
-
